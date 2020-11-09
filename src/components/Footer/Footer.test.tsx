@@ -1,17 +1,13 @@
 import React from 'react';
-import App from './App';
+import Footer from './Footer';
 import { shallow } from 'enzyme'
-
 
 import { findByTestAttr } from '../../../test/testUtils';
 
-
-const setup = () => shallow(<App />)
-
-
+const setup = () => shallow(<Footer />)
 
 test('renders app component', () => {
     const wrapper = setup();
-    const appComponent = findByTestAttr(wrapper, "component-app");
-    expect(appComponent.length).toBe(1);
+    const footerComponent = findByTestAttr(wrapper, "component-footer");
+    expect(footerComponent.length).toBe(1);
 })

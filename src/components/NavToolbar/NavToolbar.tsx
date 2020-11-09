@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Navbar,
     NavbarBrand,
     Button
 } from 'reactstrap';
 
-const NavToolbar = () => {
-
-
+const NavToolbar: React.FC = () => {
     return (
         <div>
-            <Navbar color="primary" dark>
+            <Navbar data-test="component-nav" color="primary" dark>
                 <NavbarBrand href="/" className="font-weight-bolder">Your Weather</NavbarBrand>
                 <Button size="sm" color="success text-uppercase px-3 font-weight-bold">Info</Button>
             </Navbar>

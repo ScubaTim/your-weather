@@ -1,25 +1,36 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-const WeatherView = () => {
+import { getCurrentWeather } from '../../actions/hookActions';
+
+
+const WeatherView: React.FC = () => {
+    const [currentWeather, setCurrentWeather] = React.useState({});
+
+    React.useEffect(() => {
+        getCurrentWeather(setCurrentWeather)
+    }, [])
+
+    console.log(currentWeather)
+
     return (
-        <Container>
+        <Container data-test="component-weather">
             <Row>
-                <Col className="mt-3 mb-4 text-center text-primary">
-                    <h1 className="display-4 m-0 font-weight-bolder">Orlando</h1>
+                <Col className="mt-2 mb-5 text-center text-primary">
+                    <h1 className="display-3 m-0 font-weight-bolder">Orlando</h1>
                     <p className="font-weight-light">Florida, 32303</p>
                 </Col>
             </Row>
             <Row noGutters>
-                <Col xs="3">
-                    <div className="border border-primary bg-primary text-light rounded m-1 p-1 px-2 text-center">
+                <Col xs="4">
+                    <div className="border border-primary bg-primary text-light rounded m-1 p-1 text-center">
                         <p className="mb-0">Temp:</p>
                         <h2 className="mb-5 font-weight-bolder">78F</h2>
                         <p className="mb-0">Feels Like:</p>
                         <h2 className="font-weight-bolder">90F</h2>
                     </div>
                 </Col>
-                <Col xs="9">
+                <Col xs="8">
                     <Row>
                         <Col>
                             <div className="border border-primary bg-primary text-light rounded m-1 py-1 px-3">
@@ -48,7 +59,7 @@ const WeatherView = () => {
                         </Col>
                         <Col>
                             <div className="border border-primary bg-primary text-light text-center rounded m-1 p-1">
-                                <span>Direction:&nbsp;<strong>70</strong></span>
+                                <span>Direction:&nbsp;<strong>70&deg;</strong></span>
                             </div>
                         </Col>
                     </Row>

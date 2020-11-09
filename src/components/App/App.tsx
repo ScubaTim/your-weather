@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 const App: React.FC = () => {
   return (
     <div data-test="component-app" className="App">
-      <NavToolbar data-test="component-nav" />
+      <NavToolbar />
       <WeatherView />
       <Footer />
     </div>
