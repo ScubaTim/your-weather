@@ -5,13 +5,27 @@ import { getCurrentWeather } from '../../actions/hookActions';
 
 
 const WeatherView: React.FC = () => {
+    //const [currentLocation, setCurrentLocation] = React.useState({})
     const [currentWeather, setCurrentWeather] = React.useState({});
+
+    /*const getLocation = (): void => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    setCurrentLocation({ lat: position.coords.latitude, lon: position.coords.longitude })
+                });
+        } else {
+            console.log('error with navigator.geolocaton. Oh no!')
+        }
+    }
+    getLocation()*/
 
     React.useEffect(() => {
         getCurrentWeather(setCurrentWeather)
     }, [])
 
-    console.log(currentWeather)
+    //console.log(currentLocation)
+    console.log(currentWeather);
 
     return (
         <Container data-test="component-weather">

@@ -10,7 +10,7 @@ describe('moxios tests', () => {
         moxios.uninstall()
     })
 
-    test('calls the getCurrentWeather callback on acios response', async () => {
+    test('calls the getCurrentWeather callback on axios response', async () => {
         const currentWeather = {
             "coord": {
                 "lon": -122.08,
@@ -68,7 +68,7 @@ describe('moxios tests', () => {
 
         await getCurrentWeather(mockSetCurrentWeather);
 
-        expect(mockSetCurrentWeather).toHaveBeenCalledWith(currentWeather);
+        expect(mockSetCurrentWeather).toBeCalledWith(currentWeather)
 
     })
 })

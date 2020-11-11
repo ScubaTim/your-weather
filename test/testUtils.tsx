@@ -11,5 +11,3 @@ Enzyme.configure({ adapter: new EnzymeAdapter() });
 export const findByTestAttr = (wrapper: ShallowWrapper, val: string) => {
     return wrapper.find(`[data-test='${val}']`);
 }
-
-export default { findByTestAttr }
